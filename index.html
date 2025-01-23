@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Endereço Padronizado</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1 id="titulo-principal">Gerador de Endereço Padronizado</h1>
+        <form id="endereco-form" aria-labelledby="titulo-principal">
+            <div class="form-group">
+                <label for="estado">Estado</label>
+                <select id="estado" name="estado" required aria-required="true">
+                    <option value="" disabled selected>Selecione o Estado</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="cidade">Cidade</label>
+                <select id="cidade" name="cidade" required aria-required="true">
+                    <option value="" disabled selected>Selecione a Cidade</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="endereco">Endereço</label>
+                <input type="text" id="endereco" name="endereco" placeholder="Ex: Rua das Flores, 123" required aria-required="true">
+            </div>
+
+            <div class="form-group">
+                <label for="bairro">Bairro</label>
+                <input type="text" id="bairro" name="bairro" placeholder="Ex: Centro" required aria-required="true">
+            </div>
+
+            <div class="form-group">
+                <label for="cep">CEP</label>
+                <input type="text" id="cep" name="cep" placeholder="Ex: 12345-678" maxlength="9" required aria-required="true">
+            </div>
+
+            <button type="submit" class="btn-primary">Gerar Endereço</button>
+        </form>
+    </div>
+
+    <div id="resultadoModal" class="modal">
+        <div class="modal-content">
+            <!-- Botão de fechar -->
+            <span class="modal-close" id="closeModal">&times;</span>
+    
+            <!-- Resultado do endereço -->
+            <h3>Endereço</h3>
+            <pre id="resultado" class="resultado-texto"></pre>
+    
+            <!-- Botão para copiar o endereço -->
+            <button id="copiar-endereco" class="btn-secondary">Copiar Endereço</button>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.8/jquery.inputmask.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
