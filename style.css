@@ -76,6 +76,124 @@ button:focus {
   outline-offset: 2px;
 }
 
+/* Grupo de Botões */
+.button-group {
+  margin-top: 20px; /* Adiciona espaçamento acima dos botões */
+  display: flex;
+  gap: 10px; /* Espaçamento entre os botões */
+  justify-content: space-between;
+}
+
+/* Ajuste de espaçamento entre os botões */
+.form-step button {
+  margin-top: 10px; /* Adiciona um espaço acima dos botões */
+}
+
+.btn-secondary {
+  margin-right: 10px; /* Adiciona espaçamento entre os botões "Voltar" e "Próximo" */
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+}
+
+.btn-secondary:hover {
+  background-color: #5a6268;
+}
+
+/* Ajuste no checkbox*/
+
+.checkbox-group {
+  display: flex;
+  align-items: center; /* Alinha os itens horizontalmente */
+  margin-bottom: 5px;
+}
+
+.checkbox-group label {
+  margin-right: 10px;
+  margin-bottom: 0;
+}
+
+.checkbox-group input[type="checkbox"] {
+  align-self: center; /* Alinha o checkbox verticalmente ao centro */
+  margin-top: 10px; 
+}
+
+/* O input de texto não precisa de estilos específicos para ficar abaixo,
+ pois ele já está fora do flex container .checkbox-group */
+
+ /* Ajuste da Data Acionamento e SLA */
+ .data-sla-container {
+  display: flex;
+  justify-content: space-between; /* Ou space-around, space-evenly, dependendo do espaçamento desejado */
+  align-items: center; /* Alinha os itens verticalmente */
+}
+
+.data-sla-item {
+  flex: 1; /* Permite que os itens ocupem o espaço disponível igualmente */
+  margin-right: 10px; /* Adiciona um espaçamento entre os itens */
+}
+
+.data-sla-item:last-child {
+  margin-right: 0; /* Remove a margem do último item */
+}
+
+/* Ajuste do horario de funcionamento */
+.horario-funcionamento-container {
+  display: flex;
+  flex-direction: column; /* Organiza os itens verticalmente */
+}
+
+.horario-inputs {
+  display: flex; /* Organiza os campos de hora e textos horizontalmente */
+  align-items: center; /* Alinha os itens verticalmente */
+}
+
+.horario-label {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.horario-inputs input[type="time"] {
+  margin-right: 10px;
+}
+
+/* Ajuste do agendamento do chamado */
+.agendamento-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.agendamento-header {
+  display: flex; /* Organiza o título e a data horizontalmente */
+  align-items: center; /* Alinha os itens verticalmente */
+}
+
+.agendamento-header label {
+  margin-right: 10px; /* Adiciona um espaçamento entre o título e a data */
+}
+
+.agendamento-tipo-container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+
+.agendamento-tipo-container div {
+  display: flex;
+  align-items: center;
+}
+
+.agendamento-tipo-container label {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
 /* Modal */
 .modal {
   display: none;
@@ -89,6 +207,10 @@ button:focus {
   overflow: auto;
   padding-top: 60px;
   opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.form-step {
   transition: opacity 0.3s ease-in-out;
 }
 
@@ -130,20 +252,21 @@ button:focus {
 }
 
 /* Ajuste para Telas Menores */
-@media (max-width: 600px) {
+@media (max-width: 480px) {
   h1 {
-      font-size: 20px;
+      font-size: 18px;
   }
 
   input[type="text"],
   select,
   button {
-      font-size: 14px;
-      padding: 10px;
+      font-size: 12px;
+      padding: 8px;
   }
 
   .container {
-      width: 95%;
-      margin: auto;
+      width: 100%;
+      margin: 10px;
+      padding: 10px;
   }
 }
