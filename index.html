@@ -52,7 +52,7 @@
 						<option value="12.01">12.01.SCHALTER: SELF_CHECKOUT | TOTENS_AMERICANAS</option>
                     </select>
                 </div>
-                <button type="button" class="btn-primary" onclick="nextStep(2)">Próximo</button>
+                <button type="button" class="btn-primary" id="btn-next-step-2">Próximo</button>
             </div>
             
             <!-- Etapa 2: Preenchimento do Endereço -->
@@ -88,8 +88,8 @@
                     <input type="text" id="cep" name="cep" placeholder="Ex: 12345-678" maxlength="9" required aria-required="true">
                 </div>
                 
-                <button type="button" class="btn-secondary" onclick="prevStep(1)">Voltar</button>
-                <button type="button" class="btn-primary" onclick="nextStep(3)">Próximo</button>
+                <button type="button" class="btn-secondary" id="btn-prev-step-1">Voltar</button>
+                <button type="button" class="btn-primary" id="btn-next-step-3">Próximo</button>
             </div>
             
             <!-- Etapa 3: Informações adicionais -->
@@ -201,7 +201,7 @@
                     <textarea id="pontosAtencao" name="pontosAtencao"></textarea>
                 </div>
 
-                <button type="button" class="btn-secondary" onclick="prevStep(2)">Voltar</button>
+                <button type="button" class="btn-secondary" id="btn-prev-step-2">Voltar</button>
                 <button type="submit" class="btn-primary">Gerar Chamado</button>
             </div>
         </form>

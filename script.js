@@ -16,6 +16,39 @@ $(document).ready(function () {
     const enderecoFinalInput = $('#enderecoFinal');
     const progressBar = $('#progress');
 
+    //------------Botões---------------
+    // Navegação entre etapas
+    $('#btn-next-step-2').on('click', function () {
+        nextStep(2);
+    });
+    
+    $('#btn-next-step-3').on('click', function () {
+        nextStep(3);
+    });
+    
+    $('#btn-prev-step-1').on('click', function () {
+        prevStep(1);
+    });
+    
+    $('#btn-prev-step-2').on('click', function () {
+        prevStep(2);
+    });
+    
+    window.nextStep = function (step) {
+        if (step === 2 && !validarEtapa1()) return;
+        if (step === 3 && !validarEtapa2()) return;
+    
+        $('.form-step').hide();
+        $(`#step-${step}`).show();
+        updateProgressBar(step);
+    };
+    
+    window.prevStep = function (step) {
+        $('.form-step').hide();
+        $(`#step-${step}`).show();
+        updateProgressBar(step);
+    };
+
     //-------------Etapa 1------------- 
     function validarEtapa1() {
         const projeto = projetoSelect.val();
